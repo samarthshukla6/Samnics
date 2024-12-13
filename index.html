@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trinity</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!--  
+          font-family: 'Inter', sans-serif;
+          font-family: 'Roboto Slab', serif;
+    ---->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/logos/favicon.ico" />
+
+    <!-- SCRIPTS-->
+    <script>
+      function websiteVisits(response) {
+        document.querySelector('#visits').textContent = response.value
+      }
+      const showAnswer = () => {
+        const ans = document.getElementById('answerdiv')
+        const plus_btn = document.getElementById('plus_btn')
+        const minus_btn = document.getElementById('minus_btn')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'block'
+        plus_btn.style.display = 'none'
+        minus_btn.style.display = 'block'
+      }
+      const hideAnswer = () => {
+        const ans = document.getElementById('answerdiv')
+        const plus_btn = document.getElementById('plus_btn')
+        const minus_btn = document.getElementById('minus_btn')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'none'
+        plus_btn.style.display = 'block'
+        minus_btn.style.display = 'none'
+      }
+      const showAnswer2 = () => {
+        const ans = document.getElementById('answerdiv2')
+        const plus_btn = document.getElementById('plus_btn2')
+        const minus_btn = document.getElementById('minus_btn2')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'block'
+        plus_btn.style.display = 'none'
+        minus_btn.style.display = 'block'
+      }
+      const hideAnswer2 = () => {
+        const ans = document.getElementById('answerdiv2')
+        const plus_btn = document.getElementById('plus_btn2')
+        const minus_btn = document.getElementById('minus_btn2')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'none'
+        plus_btn.style.display = 'block'
+        minus_btn.style.display = 'none'
+      }
+      const showAnswer3 = () => {
+        const ans = document.getElementById('answerdiv3')
+        const plus_btn = document.getElementById('plus_btn3')
+        const minus_btn = document.getElementById('minus_btn3')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'block'
+        plus_btn.style.display = 'none'
+        minus_btn.style.display = 'block'
+      }
+      const hideAnswer3 = () => {
+        const ans = document.getElementById('answerdiv3')
+        const plus_btn = document.getElementById('plus_btn3')
+        const minus_btn = document.getElementById('minus_btn3')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'none'
+        plus_btn.style.display = 'block'
+        minus_btn.style.display = 'none'
+      }
+      const showAnswer4 = () => {
+        const ans = document.getElementById('answerdiv4')
+        const plus_btn = document.getElementById('plus_btn4')
+        const minus_btn = document.getElementById('minus_btn4')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'block'
+        plus_btn.style.display = 'none'
+        minus_btn.style.display = 'block'
+      }
+      const hideAnswer4 = () => {
+        const ans = document.getElementById('answerdiv4')
+        const plus_btn = document.getElementById('plus_btn4')
+        const minus_btn = document.getElementById('minus_btn4')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'none'
+        plus_btn.style.display = 'block'
+        minus_btn.style.display = 'none'
+      }
+      const showAnswer5 = () => {
+        const ans = document.getElementById('answerdiv5')
+        const plus_btn = document.getElementById('plus_btn5')
+        const minus_btn = document.getElementById('minus_btn5')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'block'
+        plus_btn.style.display = 'none'
+        minus_btn.style.display = 'block'
+      }
+      const hideAnswer5 = () => {
+        const ans = document.getElementById('answerdiv5')
+        const plus_btn = document.getElementById('plus_btn5')
+        const minus_btn = document.getElementById('minus_btn5')
+
+        ans.style.transition = 'all 2s'
+        ans.style.display = 'none'
+        plus_btn.style.display = 'block'
+        minus_btn.style.display = 'none'
+      };
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Audios
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+      <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Loader
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+      <div id="loader">
+        <div class="logo-loader-box">
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <div class="ring"></div>
+          <img
+            class="loader-logo"
+            src="/assets/logos/nav-bar-logo.png"
+            alt="logo"
+          />
+        </div>
+        <div class="loading-container">
+          <div class="loading-progress"></div>
+        </div>
+        <p class="loading-percentage">0 %</p>
+        <p class="loading-page-text">
+          © 2025| Please wait we are loading your web experience.
+        </p>
+      </div>
+
+      <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        CANVAS SECTION
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+      <div class="main-page">
+        <canvas class="webgl"></canvas>
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Home Page
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <!-- POP-UP -->
+        <div class="pop-up-container">
+          <div class="pop-up">
+            <div class="warning-logo">
+              <i class="fa-solid fa-rocket"></i>
+              <h1>🎉WELCOME🎉</h1>
+            </div>
+            <div class="pop-up-text">
+              <p>
+                <strong>Attention mobile users:</strong>
+                "This website has heavy 3D components which may not be fully supported on your mobile, for the best interactive experience visit this site on
+                <strong>desktop / laptop."</strong>
+
+              </p>
+            </div>
+            <div class="close-popup-btn">
+              <button id="click-pop-up-close">CLOSE</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="section1 animation">
+          <!--=*=*=*= NAVBAR =*=*=*= -->
+          <div class="music-bars">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+          </div>
+          <div class="header">
+            <nav class="navbar">
+              <div class="left">
+                <div>
+                  <a href="#">
+                    <img
+                      class="nav-logo"
+                      src="/assets/logos/nav-bar-logo.png"
+                      alt="logo"
+                    />
+                  </a>
+                </div>
+                <div class="nav-list">
+                  <ul>
+                    <a
+                      id="click-1"
+                      class="nav-items"
+                      
+                    >
+                      <li>Home</li>
+                    </a>
+                    <a
+                      id="click-2"
+                      class="nav-items"
+                      href=""
+                    >
+                      <li>Portfolio</li>
+                    </a>
+                    <a id="click-3" class="nav-items" href="#">
+                      
+                    </a>
+                  </ul>
+                </div>
+              </div>
+              <div class="right">
+                <a id="click-4" href="https://www.linkedin.com/in/samarth-shukla-0191a2271/">
+                  <button class="register-btn">Community</button>
+                </a>
+                <a id="click-5" href="https://github.com/samarthshukla6">
+                  <button class="register-btn">Github</button>
+                </a>
+              </div>
+            </nav>
+          </div>
+          <!--=*=*=*= HOME PAGE CONTENT =*=*=*= -->
+          <div class="home-page-container">
+            <div class="home-left-container">
+              <h2>Team Stellar Presents</h2>
+              <h1>Samnics</h1>
+              <h6>Design Develop Deploy</h6>
+              <p>
+                Transform your ideas into visually stunning, scalable web graphics with our expertise.
+                <br><br>
+                We specialize in crafting custom, responsive designs tailored to your needs, ensuring a seamless digital experience. Elevate your brand with innovative visuals optimized for performance and style.
+                <br><br>
+                Let’s create graphics that captivate and communicate effectively.
+              </p>
+              <a
+                class="register-href"
+                href="https://trinity-testimonials.vercel.app/"
+              >
+                <button id="click-6">See my Portfolio</button>
+              </a>
+            </div>
+            <div class="home-right-container"></div>
+          </div>
+
+          <img class="rocket" src="/assets/images/rocket1.png" alt="img" />
+        </section>
+
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Learning Section
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section2">
+          <div class="learn-page-container">
+            <div class="learn-left-container">
+              <canvas class="webgl-2"></canvas>
+            </div>
+            <div class="learn-right-container">
+              <h3 class="section-head title-2">About Us</h3>
+              <p class="info">
+                <br />
+                At Samnics, we bring creativity and technology together to design scalable web graphics that elevate your digital presence.
+                <br />
+                <br />
+                 Our mission is to transform ideas into visually compelling, responsive designs that resonate with your audience and meet your unique needs. With a commitment to innovation and excellence, we focus on creating graphics that not only captivate but also perform seamlessly across platforms. 
+                 <br />
+                 <br />
+                 From startups to established enterprises, we cater to diverse industries, delivering solutions that align with your goals.
+                 <br />
+                 <br />
+                  Let us help you stand out with web graphics that communicate your vision and leave a lasting impression.
+               
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Is This Boot Camp For You?
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section3">
+          <div class="section-container">
+            <h3 class="section-head">Our Deliverables
+            </h3>
+            <p class="section-info">
+              Samnics Tech Is Completely User Friendly
+            </p>
+          </div>
+          <div class="card-container">
+            <div class="row">
+              <div class="card">
+                <div class="image-holder">
+                  <img
+                    class="card-models"
+                    src="/assets/images/design-model.png"
+                    alt="img"
+                  />
+                </div>
+                <p>
+                  Custom Scalable Graphics:
+                  <br>
+                   Tailored web graphics designed for responsiveness and scalability to ensure optimal performance across all devices.
+                </p>
+              </div>
+              <div class="card">
+                <div class="image-holder">
+                  <img
+                    class="card-models"
+                    src="/assets/images/web-model.png"
+                    alt="img"
+                  />
+                </div>
+                <p>
+                  Brand-Centric Designs:
+                  <br>
+                   Unique visuals that align with your brand identity and enhance your online presence effectively.
+                </p>
+              </div>
+              <div class="card">
+                <div class="image-holder">
+                  <img
+                    class="card-models"
+                    src="/assets/images/git-model.png"
+                    alt="img"
+                  />
+                </div>
+                <p>
+                  High-Performance Visuals: 
+                  <br>
+                  Optimized graphics ensuring fast loading times and seamless integration into your website or digital platforms.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="card">
+                <div class="image-holder">
+                  <img
+                    class="card-models"
+                    src="/assets/images/js-model.png"
+                    alt="img"
+                  />
+                </div>
+                <p>
+                  Interactive Elements:
+                  <br>
+                   Engaging, interactive designs that captivate your audience and improve user experience.
+                </p>
+              </div>
+              <div class="card">
+                <div class="image-holder">
+                  <img
+                    class="card-models"
+                    src="/assets/images/computer-model.png"
+                    alt="img"
+                  />
+                </div>
+                <p>
+                  End-to-End Support:  
+                  <br>
+                   Comprehensive design solutions with ongoing support for updates, enhancements, and maintaining graphic quality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Specification
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section4">
+          <div class="specification-page-container">
+            <div class="specification-left-container">
+              <h3 class="section-head">Specification</h3>
+              <div class="bullet-pt">
+                <p class="dot"></p>
+                <h4>DESIGN</h4>
+              </div>
+
+              <p class="info para">
+                Design helps us engage, it keeps us connected to the world, it
+                helps us navigate our way through physical and digital spaces.
+                Design is used to communicate, depending on who we are – it can
+                be influential by understanding our behaviour and
+                demographics.It Usually involves choosing the right colors,
+                font, structure, photos, and many more.
+                <br />
+                <br />
+                • Tools used: CANVA, FIGMA, BLENDER, PHOTOSHOP, ILLUSTRATOR.
+              </p>
+
+              <div class="bullet-pt">
+                <p class="dot"></p>
+                <h4>DEVELOP</h4>
+              </div>
+              <p class="info para">
+                Web development gives US the opportunity to express your projects
+                creatively on the internet. It Requires computer programming
+                knowledge and skills with languages of HTML, CSS, JavaScript.
+                <br />
+                <br />
+                • Tools used: VS CODE  Tech Stack: Mern Stack
+              </p>
+
+              <div class="bullet-pt">
+                <p class="dot"></p>
+                <h4>DEPLOY</h4>
+              </div>
+              <p class="info para">
+                The Version Control System helps manage the source code for the
+                software team by keeping track of all the code modifications. It
+                also protects the source code from any unintended human error
+                and consequences.
+                <br />
+                <br />
+                • Tools used: Github, Netlify, Vercel.
+              </p>
+            </div>
+            <div class="specification-right-container">
+              <canvas class="webgl-3"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        How To Prepare For The event?
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section5">
+          <div class="sec5-container">
+            <h3 class="section-head prepare">
+              How We Can Provide You Our Assistance
+            </h3>
+            
+            <div class="bullet-pt2">
+              <p class="dot2"></p>
+              <p class="prepare-info">
+                Personalized Consultations: Understand your unique requirements and offer tailored graphic design solutions that align with your goals.
+              </p>
+            </div>
+
+            <div class="bullet-pt2">
+              <p class="dot2"></p>
+              <p class="prepare-info">
+                Expert Design Team: Collaborate with skilled professionals to create stunning and scalable web graphics for your business.
+              </p>
+            </div>
+
+            <div class="bullet-pt2">
+              <p class="dot2"></p>
+              <p class="prepare-info">
+                Seamless Integration: Deliver graphics optimized for effortless integration into your websites, apps, or digital platforms.
+              </p>
+            </div>
+
+            <div class="bullet-pt2">
+              <p class="dot2"></p>
+              <p class="prepare-info">
+                Continuous Support: Provide ongoing assistance for updates, maintenance, and scaling your visuals as your business grows.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Meet Our Speakers
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section6">
+          <div class="sec6-container">
+            <h3 class="section-head">Meet Our Astonishing Team</h3>
+            <div class="speaker-card-container">
+            
+              <div class="speaker-card">
+                <img
+                  class="speaker-image"
+                  src="./public/assets/images/amisha.jpg"
+                  alt="img"
+                />
+                <h2 class="name">Amisha Pandit</h2>
+                <p class="skills">
+                  Skills: Design, Sketching, Art, and craft.
+                </p>
+                <a
+                  id="click-7"
+                  target="_blank"
+                  class="work"
+                  href=" "
+                >
+                  WORK
+                </a>
+                <p class="social">
+                  <a
+                    class="social-ico-href"
+                    target="_blank"
+                    href=""
+                  >
+                    <i id="click-8" class="fa-brands fa-github social-ico"></i>
+                  </a>
+                  <a
+                    class="social-ico-href"
+                    target="_blank"
+                    href=""
+                  >
+                    <i
+                      id="click-9"
+                      class="fa-brands fa-linkedin social-ico"
+                    ></i>
+                  </a>
+                </p>
+              </div>
+             
+              <div class="speaker-card">
+                <img
+                  class="speaker-image"
+                  src="./public/assets/images/ansh.jpg"
+                  alt="img"
+                />
+                <h2 class="name">Ansh Tolumbia</h2>
+                <p class="skills">
+                  Skills: Docker, MERN, Firebase, Github.
+                </p>
+                <a
+                  id="click-10"
+                  class="work"
+                  target="_blank"
+                  href=""
+                >
+                  WORK
+                </a>
+                <p class="social">
+                  <a
+                    target="_blank"
+                    class="social-ico-href"
+                    href=""
+                  >
+                    <i id="click-11" class="fa-brands fa-github social-ico"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    class="social-ico-href"
+                    href=""
+                  >
+                    <i
+                      id="click-12"
+                      class="fa-brands fa-linkedin social-ico"
+                    ></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    class="social-ico-href"
+                    href=""
+                  >
+                    <i
+                      id="click-13"
+                      class="fa-brands fa-twitter social-ico"
+                    ></i>
+                  </a>
+                </p>
+              </div>
+             
+              <div class="speaker-card">
+                <img
+                  class="speaker-image"
+                  src="./public/assets/images/samarth.jpg"
+                  alt="img"
+                />
+                <h2 class="name"> Samarth Shukla</h2>
+                <p class="skills">
+                  Skills: WebGL, Game-dev, blender, GitHub.
+                </p>
+                <a
+                  id="click-14"
+                  target="_blank"
+                  class="work"
+                  href=""
+                >
+                  WORK
+                </a>
+                <p class="social">
+                  <a
+                    href=""
+                    target="_blank"
+                    class="social-ico-href"
+                  >
+                    <i id="click-15" class="fa-brands fa-github social-ico"></i>
+                  </a>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="social-ico-href"
+                  >
+                    <i
+                      id="click-16"
+                      class="fa-brands fa-linkedin social-ico"
+                    ></i>
+                  </a>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="social-ico-href"
+                  >
+                    <i
+                      id="click-17"
+                      class="fa-brands fa-twitter social-ico"
+                    ></i>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Frequently Asked Questions
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section7">
+          <div class="faq-container">
+            <h3 class="section-head">Frequently Asked Questions</h3>
+
+            <!-- =========================================================
+                question 1
+        ========================================================= -->
+            <div class="accordion-cont">
+              <div class="question">
+                <div class="point">
+                  <p class="circle"></p>
+                  <span class="text">What types of web graphics do you create?</span>
+                </div>
+                <div class="expand">
+                  <i
+                    id="plus_btn"
+                    onclick="showAnswer()"
+                    class="fa-solid fa-plus"
+                  ></i>
+                  <i
+                    id="minus_btn"
+                    onclick="hideAnswer()"
+                    class="fa-solid fa-minus"
+                  ></i>
+                </div>
+              </div>
+              <div id="answerdiv" class="answer">
+                <p class="faq-answer">
+                  "We specialize in scalable, responsive web graphics, including logos, banners, icons, infographics, and custom designs tailored to your needs."
+                </p>
+              </div>
+            </div>
+            <!-- =========================================================
+                question 2
+        ========================================================= -->
+            <div class="accordion-cont">
+              <div class="question">
+                <div class="point">
+                  <p class="circle"></p>
+                  <span class="text">
+                    Can you customize designs to fit our brand identity?
+                  </span>
+                </div>
+                <div class="expand">
+                  <i
+                    id="plus_btn2"
+                    onclick="showAnswer2()"
+                    class="fa-solid fa-plus"
+                  ></i>
+                  <i
+                    id="minus_btn2"
+                    onclick="hideAnswer2()"
+                    class="fa-solid fa-minus"
+                  ></i>
+                </div>
+              </div>
+              <div id="answerdiv2" class="answer">
+                <p class="faq-answer">
+                  "Absolutely! We ensure all designs align with your brand’s style, vision, and target audience for a cohesive look and feel."
+                </p>
+              </div>
+            </div>
+
+            <!-- =========================================================
+                question 3
+        ========================================================= -->
+            <div class="accordion-cont">
+              <div class="question">
+                <div class="point">
+                  <p class="circle"></p>
+                  <span class="text">
+                    Do you offer revisions after the design is delivered?
+                  </span>
+                </div>
+                <div class="expand">
+                  <i
+                    id="plus_btn3"
+                    onclick="showAnswer3()"
+                    class="fa-solid fa-plus"
+                  ></i>
+                  <i
+                    id="minus_btn3"
+                    onclick="hideAnswer3()"
+                    class="fa-solid fa-minus"
+                  ></i>
+                </div>
+              </div>
+              <div id="answerdiv3" class="answer">
+                <p class="faq-answer">
+                  "Yes, we provide multiple revision rounds to ensure the final design meets your expectations and requirements."
+                </p>
+              </div>
+            </div>
+
+            <!-- =========================================================
+                question 4
+        ========================================================= -->
+            <div class="accordion-cont">
+              <div class="question">
+                <div class="point">
+                  <p class="circle"></p>
+                  <span class="text">
+                    Are the graphics optimized for all devices?
+                  </span>
+                </div>
+                <div class="expand">
+                  <i
+                    id="plus_btn4"
+                    onclick="showAnswer4()"
+                    class="fa-solid fa-plus"
+                  ></i>
+                  <i
+                    id="minus_btn4"
+                    onclick="hideAnswer4()"
+                    class="fa-solid fa-minus"
+                  ></i>
+                </div>
+              </div>
+              <div id="answerdiv4" class="answer">
+                <p class="faq-answer">
+                  "Yes, we create fully responsive graphics optimized for various devices, ensuring consistent quality across desktops, tablets, and smartphones."
+                </p>
+              </div>
+            </div>
+
+            <!-- =========================================================
+                question 5
+        ========================================================= -->
+            <div class="accordion-cont">
+              <div class="question">
+                <div class="point">
+                  <p class="circle"></p>
+                  <span class="text">How long does it take to complete a project?</span>
+                </div>
+                <div class="expand">
+                  <i
+                    id="plus_btn5"
+                    onclick="showAnswer5()"
+                    class="fa-solid fa-plus"
+                  ></i>
+                  <i
+                    id="minus_btn5"
+                    onclick="hideAnswer5()"
+                    class="fa-solid fa-minus"
+                  ></i>
+                </div>
+              </div>
+              <div id="answerdiv5" class="answer">
+                <p class="faq-answer">
+                  "Project timelines vary based on complexity, but we work efficiently to deliver high-quality results within agreed-upon deadlines."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+        Footer
+    =*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*= -->
+        <section class="section8">
+          <div class="footer">
+            <div class="top">
+              <img
+                class="footer-logo"
+                src="/assets/logos/pink-trinity-logo.png"
+                alt="logo"
+              />
+              <div class="footer-text">
+                <h1>Samnics</h1>
+                <p>Design Develop Deploy</p>
+              </div>
+              
+            </div>
+            <div class="description-event">
+              <p>
+                Transform your ideas into visually stunning, scalable web graphics with our expertise.
+
+We specialize in crafting custom, responsive designs tailored to your needs, ensuring a seamless digital experience. Elevate your brand with innovative visuals optimized for performance and style.
+
+Let’s create graphics that captivate and communicate effectively.
+              </p>
+              <a id="click-38" href="">
+                <button class="register-btn">Community</button>
+              </a>
+            </div>
+
+            <div class="mid">
+              <div class="contacts">
+                <div class="co-ordinator-div">
+                 
+                  
+                
+                </div>
+
+                <div class="management-div">
+                 
+                </div>
+              </div>
+
+              <div class="address">
+                <h4 class="mid-footer-titles">Contact us</h4>
+                <p class="mid-footer-content">
+                  5/2 Navneet Tower Old Palasia, Indore, Madhya Pradesh, India
+                </p>
+                <br />
+                <p class="mid-footer-content">Phone: +91 7746971976</p>
+              </div>
+
+              <div class="connection">
+                <!-- <h4 class="mid-footer-titles">Let’s stay connected</h4>
+                <p class="connection-content">
+                  Send us an email with your views; we'd love to hear from you.
+                </p> -->
+                <form
+                  action="mailto:rscoeacmchapter@gmail.com"
+                  method="post"
+                  enctype="text/plain"
+                >
+                  <div class="">
+                    <input
+                      class="mail"
+                      placeholder=""
+                      type="text"
+                      name="mail-text"
+                    />
+                    <input id="click-28" class="send-mail" type="" />
+                  </div>
+                </form>
+                <br>
+               
+                <div class="footer-social-icon">
+                  <a
+                    target="_blank"
+                    href=""
+                    class="footer-social-icons"
+                  >
+                    <i id="click-29" class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href=""
+                    class="footer-social-icons"
+                  >
+                    <i id="click-30" class="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href=""
+                    class="footer-social-icons"
+                  >
+                    <i id="click-31" class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href=""
+                    class="footer-social-icons"
+                  >
+                    <i id="click-32" class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a
+                    target="_blank"
+                    href=""
+                    class="footer-social-icons"
+                  >
+                    <i id="click-33" class="fa-brands fa-telegram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom">
+              <p class="designers">
+                Designed and Developed By
+                <a
+                  id="click-35"
+                  href="https://github.com/SahilK-027"
+                  target="_blank"
+                >
+                  Samarth Shukla
+                </a>
+                And
+                <a
+                  id="click-36"
+                  href="https://github.com/abhishekrd"
+                  target="_blank"
+                >
+                  Amisha Pandit
+                </a>
+              </p>
+              <p class="desclaimer">
+                © 2025 Samnics 
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
