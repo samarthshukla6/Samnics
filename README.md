@@ -20,3 +20,4 @@ Samnics is an interactive 3D website built with modern web technologies such as 
 
 ## Working Video
 
+https://github.com/user-attachments/assets/220064e6-995d-4855-926d-e670460cd2fc
