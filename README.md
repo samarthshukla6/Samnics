@@ -18,3 +18,5 @@ Samnics is an interactive 3D website built with modern web technologies such as 
 - **Draco Compression:** Efficient geometry compression for 3D models.
 - **Blender:** 3D modeling and animation tool used to create assets.
 
+## Working Video
+
